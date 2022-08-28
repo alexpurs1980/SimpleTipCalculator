@@ -18,7 +18,7 @@
         android:inputType="numberDecimal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="Cost of service" />
+        android:autofillHints="Cost of service is" />
 
     <TextView
         android:id="@+id/service_question"
