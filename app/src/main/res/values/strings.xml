@@ -7,5 +7,5 @@
     <string name="ok">OK (10%)</string>
     <string name="switch_caption">Round up tip?</string>
     <string name="calculate_button">Calculate</string>
-    <string name="tip_amount">Tip Amount</string>
+    <string name="tip_amount">Tip Amount: %s</string>
 </resources>
