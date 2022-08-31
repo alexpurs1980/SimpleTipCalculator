@@ -24,11 +24,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun calculateTip() {
-        val cost = binding.costOfService.text.toString().toDouble()
-        val selectedID = binding.tipOptions.checkedRadioButtonId
+    private fun calculateTip() {
+        val cost = binding.costOfService.text.toString().toDoubleOrNull()
+        if (cost == null) {
+            binding.tipResult.text = "Input cost of service"
+            return
+        }
         // set the tip percentage
-        val tipPercentage = when(selectedID) {
+        val tipPercentage = when(binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.2
             R.id.option_fifteen_percent -> 0.15
             else -> 0.1
@@ -36,9 +39,9 @@ class MainActivity : AppCompatActivity() {
 
         var tip = cost * tipPercentage
         //Assign the isChecked attribute of the round up switch to a variable called roundUp.
-        val roundUp = binding.roundUpSwitch.isChecked
+
         // if true - round up tip
-        if (roundUp) {
+        if (binding.roundUpSwitch.isChecked) {
             tip = kotlin.math.ceil(tip)
         }
         // set currency format for tips
